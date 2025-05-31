@@ -75,7 +75,7 @@
 function generateQRCode() {
     const qrImage = document.getElementById("qrCode");
     const encodedURL = encodeURIComponent(siteURL);
-    qrImage.src = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodedURL}`;
+    qrImage.src = "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodedURL}";
 }
 
 // Call this when the page loads
