@@ -169,3 +169,13 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(24px);
 }
+.qr-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.qr-section img {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}

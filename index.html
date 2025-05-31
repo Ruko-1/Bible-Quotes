@@ -15,6 +15,10 @@
             <button onclick="shareOnFacebook()"><img src="facebook.png" alt="facebook" style="width:16px; vertical-align:middle;"> Facebook</button>
         </div>
     </div>
+    <div class="qr-section">
+        <h4>Scan to open this site</h4>
+        <img id="qrCode" src="" alt="QR Code to this site">
+    </div>
     <div class="toggle-container">
         <label class="switch">
             <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
@@ -65,6 +69,24 @@
     } else {
         btn.innerText = '🌙 Dark Mode';
     }
+
+    const siteURL = "https://ruko-1.github.io/Bible-Quotes/"; // or your hosted URL
+
+function generateQRCode() {
+    const qrImage = document.getElementById("qrCode");
+    const encodedURL = encodeURIComponent(siteURL);
+    qrImage.src = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodedURL}`;
+}
+
+// Call this when the page loads
+window.onload = function () {
+    const darkMode = localStorage.getItem('darkMode') === 'true';
+    document.getElementById('darkModeToggle').checked = darkMode;
+    document.body.classList.toggle('dark', darkMode);
+
+    generateQuote();     // Show initial quote
+    generateQRCode();    // Load QR code
+};
 }
     </script>
 </body>
